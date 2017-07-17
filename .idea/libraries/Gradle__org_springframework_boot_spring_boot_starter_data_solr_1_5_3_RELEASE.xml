@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.boot:spring-boot-starter-data-solr:1.5.3.RELEASE">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-solr/1.5.3.RELEASE/a1a9da34cdc991ffb26d10b1b355eb39ee5109/spring-boot-starter-data-solr-1.5.3.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-starter-data-solr/1.5.3.RELEASE/8234019c865597a24ec9a24f10d3bd1c88971dd8/spring-boot-starter-data-solr-1.5.3.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

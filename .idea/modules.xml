@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sublease-core.iml" filepath="$PROJECT_DIR$/.idea/modules/sublease-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sublease-core_cucumber.iml" filepath="$PROJECT_DIR$/.idea/modules/sublease-core_cucumber.iml" group="sublease-core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sublease-core_main.iml" filepath="$PROJECT_DIR$/.idea/modules/sublease-core_main.iml" group="sublease-core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sublease-core_test.iml" filepath="$PROJECT_DIR$/.idea/modules/sublease-core_test.iml" group="sublease-core" />
+    </modules>
+  </component>
+</project>

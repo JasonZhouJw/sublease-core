@@ -1,0 +1,33 @@
+spring:
+  http:
+    converters:
+      preferred-json-mapper: gson
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+  h2:
+    console:
+      enabled: true
+  datasource:
+    primary:
+      url: jdbc:h2:file:~/.h2/sublease-primary
+      username: sa
+      password: sa
+      driverClassName: org.h2.Driver
+
+    secondary:
+      url: jdbc:h2:file:~/.h2/sublease-secondary
+      username: sa
+      password: sa
+      driverClassName: org.h2.Driver
+security:
+  user:
+    name: admin
+    password: admin
+
+logging:
+  level:
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.engine.QueryParameters: DEBUG
