@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{label.appTitle}}</title>
+    <title>Sublease</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="/css/layout.css" rel="stylesheet"/>
-    <script data-main="app" src="lib/require.js"></script>
+    <script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
 </head>
 <body>
-<script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
@@ -25,6 +24,7 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{{rootUrl}}">{{label.dashboard}}</a></li>
+                <li><a href="#!/login">login</a></li>
                 <li><a href="#">{{user}}</a></li>
                 <li>
                     <form action="{{signoutUrl}}" method="post" class="navbar-form navbar-left">
@@ -40,23 +40,23 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li><a href="{{rootUrl}}">{{label.dashboard}} <span class="sr-only">(current)</span></a></li>
-                <li><a href="{{verifyResultUrl}}">{{label.verifyresult}}</a></li>
-                <li><a href="{{accountUrl}}">{{label.accounts}}</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-plus"></i>
-                        {{label.testcase.header}}
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="{{testCaseUrl}}">{{label.testcase}}</a></li>
-                        <li><a href="{{caseGroupUrl}}">{{label.casegroup}}</a></li>
-                    </ul>
-                </li>
+                <li><a href="#!/view1">Home<span class="sr-only">(current)</span></a></li>
+                <!--<li><a href="{{verifyResultUrl}}">{{label.verifyresult}}</a></li>-->
+                <!--<li><a href="{{accountUrl}}">{{label.accounts}}</a></li>-->
+                <!--<li class="dropdown">-->
+                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-plus"></i>-->
+                        <!--{{label.testcase.header}}-->
+                        <!--<span class="caret"></span></a>-->
+                    <!--<ul class="dropdown-menu" role="menu">-->
+                        <!--<li><a href="{{testCaseUrl}}">{{label.testcase}}</a></li>-->
+                        <!--<li><a href="{{caseGroupUrl}}">{{label.casegroup}}</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
             </ul>
         </div>
 
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            {{>content}}
+        <div data-ng-view class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
         </div>
     </div>
 </div>
@@ -67,9 +67,12 @@
     <p align="center"></p>
 </footer>
 
-<script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
-<script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
-<script src="/scripts/require.js"></script>
+<script src="lib/require.js" data-main="app/main.js"></script>
+
+
+<!--<script src="/webjars/jquery/3.1.0/jquery.min.js"></script>-->
+<!--<script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>-->
+<!--<script src="/scripts/require.js"></script>-->
 
 </body>
 </html>
