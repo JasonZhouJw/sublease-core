@@ -1,6 +1,6 @@
 define(['./../account'], function (account) {
     'use strict';
-    account.controller('UserLoginCtrl', [function ($scope) {
+    account.controller('UserLoginCtrl', ['$scope',function ($scope) {
 
         $scope.name="demo";
 

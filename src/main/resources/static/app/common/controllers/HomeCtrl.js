@@ -1,6 +1,6 @@
-define(['./../common'], function (account) {
+define(['./../common'], function (common) {
     'use strict';
-    account.controller('homeCtrl', [function ($scope) {
+    common.controller('HomeCtrl', ['$scope',function ($scope) {
 
         $scope.name="demo";
 

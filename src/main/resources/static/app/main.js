@@ -5,9 +5,13 @@ require.config({
     baseUrl:'/app',
     paths: {
         'angular': '../lib/angular',
-        'angular-route': '../lib/angular-route',
+        'angular-route': '../lib/angular-route/angular-route',
+        'angular-cookies': '../lib/angular-cookies/angular-cookies',
         'domReady': '../lib/domReady',
-        'angular-translate':'../lib/angular-translate'
+        'angular-translate':'../lib/angular-translate/angular-translate',
+        'angular-translate-loader-static-files':'../lib/angular-translate/angular-translate-loader-static-files/angular-translate-loader-static-files',
+        'angular-translate-storage-cookie':'../lib/angular-translate/angular-translate-storage-cookie/angular-translate-storage-cookie'
+//        'angular-translate-storage-local':'../lib/angular-translate/angular-translate-storage-local/angular-translate-storage-local'
     },
     shim: {
         'angular': {
@@ -15,6 +19,27 @@ require.config({
         },
         'angular-route': {
             deps: ['angular']
+        },
+        'angular-cookies':{
+            deps:['angular']
+        },
+        'angular-translate-storage-cookie': {
+            deps: [
+                'angular-cookies',
+                'angular-translate'
+            ]
+        },
+//        'angular-translate-storage-local':{
+//            deps: [
+//                 'angular-translate-storage-cookies',
+//               'angular-translate'
+//            ]
+//        },
+        'angular-translate-loader-static-files': {
+            deps: ['angular-translate']
+        },
+        'angular-translate':{
+            deps:['angular']
         }
     },
 
