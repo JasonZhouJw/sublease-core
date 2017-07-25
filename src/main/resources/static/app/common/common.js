@@ -10,8 +10,11 @@ define([
                 templateUrl : 'app/common/views/home.html',
                 controller : 'HomeCtrl'
               });
-              $routeProvider.otherwise({
+            $routeProvider.when('/login', {
+                templateUrl : 'app/common/views/login.html'
+            });
+            $routeProvider.otherwise({
                 redirectTo : '/home'
-              });
+            });
             }]);
 });

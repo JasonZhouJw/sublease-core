@@ -33,15 +33,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.headers().frameOptions().disable();
-        http.authorizeRequests().anyRequest().permitAll();
-        http.authorizeRequests().antMatchers("/css/**", "/webjars/**").permitAll()
+//        http.authorizeRequests().anyRequest().permitAll();
+        http.authorizeRequests().antMatchers("/css/**", "/webjars/**", "/lib/**", "/app/**", "/l10n/**").permitAll()
                 .antMatchers("/h2-console/**").permitAll() // TODO: 2017-01-25 need to remove
-//                .antMatchers("/home").permitAll()
-//                .anyRequest().authenticated()
+                .antMatchers("/index.html", "/login").permitAll()
+                .anyRequest().authenticated()
                 .and()
-                .formLogin().defaultSuccessUrl("/home").loginPage("/login").permitAll().successHandler(loginSuccessHandler)
+                .formLogin().defaultSuccessUrl("/index.html").loginPage("/index.html#!/login").permitAll().successHandler(loginSuccessHandler)
                 .and()
-                .logout().logoutUrl("/logout").logoutSuccessUrl("/home").permitAll().invalidateHttpSession(true)
+                .logout().logoutUrl("/index.html#!/logout").logoutSuccessUrl("/index.html").permitAll().invalidateHttpSession(true)
                 .and()
                 .rememberMe().tokenValiditySeconds(60 * 60 * 24 * 7).tokenRepository(tokenRepository());
         http.csrf().disable();

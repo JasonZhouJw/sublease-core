@@ -1,0 +1,21 @@
+<link href="/css/signin.css" rel="stylesheet"/>
+<div class="container">
+    <form class="form-signin" method="POST" action="/login">
+        <h2 class="form-signin-heading">{{'login.head' | translate}}</h2>
+        <div class="alert alert-{{type}}" role="alert">
+            {{message| translate}}
+        </div>
+        <label for="username" class="sr-only">{{'login.label.username'|translate}}</label>
+        <input type="username" id="username" name="username" class="form-control" placeholder="{{'login.label.username'|translate}}"
+               required autofocus>
+        <label for="password" class="sr-only">{{'login.label.password'|translate}}</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="{{'login.label.password'|translate}}"
+               required>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="true" name="remember-me"> {{'login.label.rememberme'|translate}}
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">{{'login.label.login'|translate}}</button>
+    </form>
+</div>
