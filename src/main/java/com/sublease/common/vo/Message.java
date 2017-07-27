@@ -2,26 +2,33 @@ package com.sublease.common.vo;
 
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
+import org.apache.commons.lang3.StringUtils;
 
 /**
- * Created by jzhou237 on 2017-06-30.
+ * Created by jzhou237 on 2017-07-27.
  */
-@Getter
 @Setter
-@ToString
-public class Message<T> {
+@Getter
+public class Message {
 
-    private String code;
+    private String messageType;
 
     private String message;
 
-    private T data;
-
     public Message() {
+
     }
 
-    public Message(String message) {
+    public Message(String messageTypes, String message) {
         this.message = message;
+        this.messageType = messageTypes;
+    }
+
+    public boolean isNotEmpty() {
+        boolean empty = true;
+        if (StringUtils.isEmpty(this.message)) {
+            empty = false;
+        }
+        return empty;
     }
 }

@@ -8,18 +8,35 @@ define(['./../account'], function (account) {
 
         var authenticate=function(credentials, callback){
             var headers = credentials ? {authorization : "Basic " + btoa(credentials.username + ":" + credentials.password)} : {};
-            $http.post('login', credentials)
-                .then(function(response) {
-                  if (response.data.name) {
-                    $scope.authenticated = true;
-                  } else {
-                    $scope.authenticated = false;
-                  }
-                  callback && callback();
-                }, function() {
-                  $scope.authenticated = false;
-                  callback && callback();
-                });
+            $http({
+                method: 'POST',
+                url: 'login',
+                data: $.param(credentials),
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+            }).success(function(response) {
+                              if (response.data.name) {
+                                $scope.authenticated = true;
+                              } else {
+                                $scope.authenticated = false;
+                              }
+                              callback && callback();
+                            }, function() {
+                              $scope.authenticated = false;
+                              callback && callback();
+                            }
+            )
+//            $http.post('login', credentials)
+//                .then(function(response) {
+//                  if (response.data.name) {
+//                    $scope.authenticated = true;
+//                  } else {
+//                    $scope.authenticated = false;
+//                  }
+//                  callback && callback();
+//                }, function() {
+//                  $scope.authenticated = false;
+//                  callback && callback();
+//                });
         }
 
 //        authenticate();

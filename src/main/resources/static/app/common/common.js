@@ -10,9 +10,9 @@ define([
                 templateUrl : 'app/common/views/home.html',
                 controller : 'HomeCtrl'
               });
-            $routeProvider.when('/login', {
-                templateUrl : 'app/common/views/login.html'
-            });
+//            $routeProvider.when('/login', {
+//                templateUrl : 'app/common/views/login.html'
+//            });
             $routeProvider.otherwise({
                 redirectTo : '/home'
             });

@@ -1,10 +1,9 @@
 package com.sublease.core.user.controller;
 
 
-import com.sublease.common.vo.Message;
+import com.sublease.common.vo.RespData;
 import com.sublease.core.user.domain.AuthenticationResult;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -17,10 +16,10 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class SessionController {
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     @ResponseBody
-    public Message<String> login(@ModelAttribute AuthenticationResult authenticationResult) {
-        return new Message<String>(authenticationResult.getMessage());
+    public String login(@ModelAttribute AuthenticationResult authenticationResult) {
+        return authenticationResult.getMessage();
     }
 
     @PostMapping("/logout")

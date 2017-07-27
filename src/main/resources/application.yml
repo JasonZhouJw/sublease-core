@@ -1,4 +1,6 @@
 spring:
+  profiles:
+    active: WebSecurity
   http:
     converters:
       preferred-json-mapper: gson
@@ -31,3 +33,5 @@ logging:
   level:
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.engine.QueryParameters: DEBUG
+
+perPageSize: 20

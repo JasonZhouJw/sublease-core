@@ -20,8 +20,8 @@ import javax.sql.DataSource;
  */
 @Configuration
 @EnableWebSecurity
-@Profile("WebSecurity")
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+@Profile("RestSecurity")
+public class RestSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private DataSource dataSource;
@@ -41,7 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/index.html", "/login").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin().loginProcessingUrl("/login").defaultSuccessUrl("/index.html").loginPage("/index.html#!/login").permitAll().successHandler(loginSuccessHandler)
+                .formLogin().defaultSuccessUrl("/index.html").loginPage("/index.html#!/login").permitAll().successHandler(loginSuccessHandler)
                 .and()
                 .logout().logoutUrl("/index.html#!/logout").logoutSuccessUrl("/index.html").permitAll().invalidateHttpSession(true)
                 .and()

@@ -1,5 +1,6 @@
 package com.sublease.common.enums;
 
+import com.sublease.common.vo.Message;
 import lombok.Getter;
 
 /**
@@ -7,11 +8,20 @@ import lombok.Getter;
  */
 @Getter
 public enum MessageType {
-    INFO("info"), DANGER("danger"), FAIL("fail");
+    INFO("info"),
+    DANGER("danger"),
+    SUCCESS("success"),
+    ACTIVE("active"),
+    WARNING("warning");
 
     private String code;
 
     MessageType(String code) {
         this.code = code;
     }
+
+    public Message getMessage(String message) {
+        return new Message(this.code, message);
+    }
+
 }
